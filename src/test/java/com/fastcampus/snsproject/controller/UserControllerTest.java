@@ -1,5 +1,6 @@
 package com.fastcampus.snsproject.controller;
 
+import com.fastcampus.snsproject.Exception.ErrorCode;
 import com.fastcampus.snsproject.Exception.SnsApplicationException;
 import com.fastcampus.snsproject.controller.request.UserJoinRequest;
 import com.fastcampus.snsproject.controller.request.UserLoginRequest;
@@ -58,7 +59,7 @@ public class UserControllerTest {
         String password = "password";
 
         //TODO : mocking
-        when(userService.join()).thenThrow(new SnsApplicationException());
+        when(userService.join(userName,password)).thenThrow(new SnsApplicationException(ErrorCode.DUPLICATED_USER_NAME,""));
 
         mockMvc.perform(post("/api/vi/users/join")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -90,7 +91,7 @@ public class UserControllerTest {
         String password = "password";
 
         //TODO : mocking
-        when(userService.login(userName,password)).thenThrow(new SnsApplicationException());
+        when(userService.login(userName,password)).thenThrow(new SnsApplicationException(ErrorCode.DUPLICATED_USER_NAME,""));
 
         mockMvc.perform(post("/api/vi/users/login")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -106,7 +107,7 @@ public class UserControllerTest {
         String password = "password";
 
         //TODO : mocking
-        when(userService.login(userName,password)).thenThrow(new SnsApplicationException());
+        when(userService.login(userName,password)).thenThrow(new SnsApplicationException(ErrorCode.DUPLICATED_USER_NAME,""));
 
         mockMvc.perform(post("/api/vi/users/login")
                         .contentType(MediaType.APPLICATION_JSON)
