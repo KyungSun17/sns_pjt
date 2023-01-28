@@ -1,8 +1,10 @@
 package com.fastcampus.snsproject.controller.response;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 @AllArgsConstructor
+@Getter
 public class Response<T> {
 
     private String resultCode;
