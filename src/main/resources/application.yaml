@@ -1,18 +1,23 @@
 spring.jpa:
-#  database: postgresql
-#  hibernate.dialect: org.hibernate.dialect.PostgresSQLDialect
-#  hibernate.ddl-auto: none
+  database: postgresql
+  hibernate.dialect: org.hibernate.dialect.PostgresSQLDialect
+  hibernate.ddl-auto: update
   properties.hibernate.format_sql: ture
   show-sql: true
-spring:
-  h2:
-    console:
-      enabled: true
+#spring:
+#  h2:
+#    console:
+#      enabled: true
 
-#spring.datasource:
-#  hikari.maximum-pool-size: 4
-#  url: jdbc:postgresql://ec2-52-86-115-245.compute-1.amazonaws.com/d2p70ft1bv6u4c
-#  username: sohthnduwbipay
-#  password: 62971a3ff89fb0c590e0253d6871ba2256d678d39233dfd9f41a91eff1ea0246
-#  platform: postgres
-#  driver-class-name: org.postgresql.Driver
+spring.datasource:
+  hikari.maximum-pool-size: 4
+  url: jdbc:postgresql://ec2-54-163-140-5.compute-1.amazonaws.com:5432/de3cestlqkekp0
+  username: u7bjqnltofpp1p
+  password: p240170e441a1aa72fee6bba192898a83e9c30edf1f7aeb94329e15e34bc3dc2c
+  platform: postgres
+  driver-class-name: org.postgresql.Driver
+
+jwt:
+  secret-key: fast-campus.simple_sns_2022_secret_key
+  # 30 days
+  token.expired-time-ms: 2592000000
