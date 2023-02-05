@@ -27,9 +27,8 @@ public class UserEntity {
     private String password;
 
     //user의 권한정보 : admin, 일반user 등
-    @Column(name = "role")
     @Enumerated(EnumType.STRING)
-    private UserRole role;
+    private UserRole role = UserRole.USER;
 
     //system column
     @Column(name = "registered_at")
